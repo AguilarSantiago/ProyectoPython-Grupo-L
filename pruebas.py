@@ -21,4 +21,4 @@ def kaprekar(num):
         return 8
 
     n = 0
->>>>>>> Potichkin
+
