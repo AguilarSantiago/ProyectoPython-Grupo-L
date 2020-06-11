@@ -7,13 +7,13 @@ def rango (num):
         return False
     else:
         return True 
-    
-# función que cuenta las iteraciones 
-def kaprekar(num):
+ 
+#función que cuenta las iteraciones 
+def kaprekar(num):        
     numS = str(num)
 
     # Agrega los 0 necesarios
-    numS = '0' * (4 - len(numS)) + numS
+    numS = '0' * (4 - len(numS)) + numS    
 
     # Tiene que haber 2 digitos diferentes por lo menos, sino arroja 8
     if len(collections.Counter(numS)) == 1:
@@ -26,7 +26,7 @@ def kaprekar(num):
     if num ==6174:
         print("0 iteración." )
         return 0
-    
+
     else:
         while (num != 6174):
             n += 1
@@ -41,8 +41,8 @@ def kaprekar(num):
 
             # ordena los número de manera ascendente
             menor = int(''.join(sorted(numS)))
-
-            # resta el mayor menos el menor
+           
+            # resta el mayor menos el menor        
             num = mayor - menor
            
             if n == 8:
@@ -53,11 +53,19 @@ def kaprekar(num):
         return n
 
 #MAIN
-while True:
-    numero = int(input("Ingresa el numero de casos de prueba: "))
-    if rango (numero) == True:
-        break
 
-kaprekar (numero)
+caso = int(input("Ingresa el numero de casos de prueba: "))
+n=0
+
+while (n < caso):
+
+    while True:
+        numero = int(input("Ingresa un numero: "))
+        if rango (numero) == True:
+            break
+
+    kaprekar (numero)
+
+    n= n+1
 
 
