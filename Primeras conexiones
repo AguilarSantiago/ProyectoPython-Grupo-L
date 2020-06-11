@@ -1,0 +1,33 @@
+from django.http import HttpResponse
+import datetime
+
+def saludo(request):  #Primera vista 
+
+    return HttpResponse("Hola mundo, es la primera pagina que cree.")
+
+def dos(request):
+
+    documento="<html><body><h1>Hola Mami, como estas?</h1></body></html>"
+
+    return HttpResponse(documento)
+def DameDia(request):
+
+    fecha_actual=datetime.datetime.now()
+
+    texto="""<html>
+    <body>
+    <h2>
+    La hora es: %s
+    </h2>
+    </body>
+    </html>""" % fecha_actual
+
+    return HttpResponse(texto)
+
+def edadCalc(request,edad, anio):
+
+    periodo=anio-2020
+    edadProx=edad+periodo
+    documento="<html><body><h1>En el año %s tendras %s años de edad" %(anio, edadProx)
+
+    return HttpResponse(documento)
