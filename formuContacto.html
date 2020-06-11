@@ -1,0 +1,23 @@
+<html>
+<body>
+	<h1>Contactenos</h1>
+
+	<!--acá evaluamos si tiene errores-->
+	{% if form.errors %}
+
+	<p style="color: red;">Por favor revisa este campo</p>
+
+	{% endif %}
+
+	<form action="" method="POST"> {% cdrf_token %}
+		<table>
+			<!--tenemos que hacer las etiquetas de form y table, pero el resto lo hace la API, que es la siguiten línea-->			
+			{{ form.as_table }}
+		</table>
+		<input type="submit" name="Enviar">
+	</form>
+	}
+
+
+</body>
+</html>
